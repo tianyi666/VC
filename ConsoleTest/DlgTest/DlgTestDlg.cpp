@@ -6,7 +6,7 @@
 #include "DlgTest.h"
 #include "DlgTestDlg.h"
 #include "afxdialogex.h"
-#include "ConfirmDlg.h"
+//#include "ConfirmDlg.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -55,6 +55,7 @@ CDlgTestDlg::CDlgTestDlg(CWnd* pParent /*=NULL*/)
 	, m_result(0)
 {
 	m_hIcon = AfxGetApp()->LoadIcon(IDR_MAINFRAME);
+	m_pDlg = NULL;
 }
 
 void CDlgTestDlg::DoDataExchange(CDataExchange* pDX)
@@ -171,13 +172,33 @@ void CDlgTestDlg::OnBnClickedCancel()
 void CDlgTestDlg::OnClickedBtnCal()
 {
 	// TODO:  在此添加控件通知处理程序代码
-	CConfirmDlg dlg;
-	if (dlg.DoModal()==IDCANCEL)
+	//CConfirmDlg dlg;
+	//if (dlg.DoModal()==IDCANCEL)
+	//{
+	//	return;
+	//}
+
+	// 如果指针变量m_pTipDlg的值为NULL，则对话框还未创建，需要动态创建   
+	if (!m_pDlg)
 	{
-		return;
+		 //创建非模态对话框实例   
+		m_pDlg = new CConfirmDlg();
+		m_pDlg->Create(IDD_CONFIRMDLG, this);
 	}
+	// 显示非模态对话框   
+	m_pDlg->ShowWindow(SW_SHOW);
 	
 	UpdateData();
 	m_result = m_edit1 + m_edit2;
 	UpdateData(false);
 }
+
+CDlgTestDlg::~CDlgTestDlg()
+{
+	if (m_pDlg != NULL)
+	{
+		delete m_pDlg;
+	}
+}
+
+
