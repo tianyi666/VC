@@ -31,4 +31,8 @@ protected:
 	DECLARE_MESSAGE_MAP()
 public:
 	afx_msg void OnBnClickedCancel();
+	int m_edit1;
+	int m_edit2;
+	int m_result;
+	afx_msg void OnClickedBtnCal();
 };

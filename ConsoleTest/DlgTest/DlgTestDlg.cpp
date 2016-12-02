@@ -49,6 +49,9 @@ END_MESSAGE_MAP()
 
 CDlgTestDlg::CDlgTestDlg(CWnd* pParent /*=NULL*/)
 	: CDialogEx(CDlgTestDlg::IDD, pParent)
+	, m_edit1(0)
+	, m_edit2(0)
+	, m_result(0)
 {
 	m_hIcon = AfxGetApp()->LoadIcon(IDR_MAINFRAME);
 }
@@ -56,6 +59,9 @@ CDlgTestDlg::CDlgTestDlg(CWnd* pParent /*=NULL*/)
 void CDlgTestDlg::DoDataExchange(CDataExchange* pDX)
 {
 	CDialogEx::DoDataExchange(pDX);
+	DDX_Text(pDX, IDC_EDIT1, m_edit1);
+	DDX_Text(pDX, IDC_EDIT2, m_edit2);
+	DDX_Text(pDX, IDC_RESULT, m_result);
 }
 
 BEGIN_MESSAGE_MAP(CDlgTestDlg, CDialogEx)
@@ -63,6 +69,7 @@ BEGIN_MESSAGE_MAP(CDlgTestDlg, CDialogEx)
 	ON_WM_PAINT()
 	ON_WM_QUERYDRAGICON()
 	ON_BN_CLICKED(IDCANCEL, &CDlgTestDlg::OnBnClickedCancel)
+	ON_BN_CLICKED(IDC_BTN_CAL, &CDlgTestDlg::OnClickedBtnCal)
 END_MESSAGE_MAP()
 
 
@@ -157,4 +164,13 @@ void CDlgTestDlg::OnBnClickedCancel()
 {
 	// TODO:  在此添加控件通知处理程序代码
 	CDialogEx::OnCancel();
+}
+
+
+void CDlgTestDlg::OnClickedBtnCal()
+{
+	// TODO:  在此添加控件通知处理程序代码
+	UpdateData();
+	m_result = m_edit1 + m_edit2;
+	UpdateData(false);
 }
