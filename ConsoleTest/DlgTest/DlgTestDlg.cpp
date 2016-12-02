@@ -6,6 +6,7 @@
 #include "DlgTest.h"
 #include "DlgTestDlg.h"
 #include "afxdialogex.h"
+#include "ConfirmDlg.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -170,6 +171,12 @@ void CDlgTestDlg::OnBnClickedCancel()
 void CDlgTestDlg::OnClickedBtnCal()
 {
 	// TODO:  在此添加控件通知处理程序代码
+	CConfirmDlg dlg;
+	if (dlg.DoModal()==IDCANCEL)
+	{
+		return;
+	}
+	
 	UpdateData();
 	m_result = m_edit1 + m_edit2;
 	UpdateData(false);
