@@ -35,7 +35,7 @@ res\MFCApplication1.rc2
 
 MainFrm.h, MainFrm.cpp
     这些文件中包含框架类 CMainFrame，该类派生自
-    CFrameWnd 并控制所有 SDI 框架功能。
+    CFrameWnd 并控制所有 SDI 框架功能。   
 
 res\Toolbar.bmp
     此位图文件用于为工具栏创建平铺图像。
