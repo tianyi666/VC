@@ -36,6 +36,18 @@
     <ClInclude Include="ConfirmDlg.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="FIRSTPAGE.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="SECONDPAGE.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="THIRDPAGE.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="PageSheet.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DlgTest.cpp">
@@ -48,6 +60,18 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="ConfirmDlg.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="FIRSTPAGE.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="SECONDPAGE.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="THIRDPAGE.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="PageSheet.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>

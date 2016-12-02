@@ -72,6 +72,7 @@ BEGIN_MESSAGE_MAP(CDlgTestDlg, CDialogEx)
 	ON_WM_QUERYDRAGICON()
 	ON_BN_CLICKED(IDCANCEL, &CDlgTestDlg::OnBnClickedCancel)
 	ON_BN_CLICKED(IDC_BTN_CAL, &CDlgTestDlg::OnClickedBtnCal)
+	ON_BN_CLICKED(IDC_BTN_HELP, &CDlgTestDlg::OnBnClickedBtnHelp)
 END_MESSAGE_MAP()
 
 
@@ -202,3 +203,12 @@ CDlgTestDlg::~CDlgTestDlg()
 }
 
 
+
+
+void CDlgTestDlg::OnBnClickedBtnHelp()
+{
+	// TODO:  在此添加控件通知处理程序代码
+	CPageSheet pSheet(_T("帮助"));
+	////pSheet.SetWizardMode(); //向导模式才调用  OnSetActive() finish 等函数 也是
+	pSheet.DoModal();
+}

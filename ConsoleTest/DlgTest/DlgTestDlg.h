@@ -4,6 +4,7 @@
 
 #pragma once
 #include "ConfirmDlg.h"
+#include "PageSheet.h"
 
 // CDlgTestDlg ¶Ô»°¿ò
 class CDlgTestDlg : public CDialogEx
@@ -41,4 +42,5 @@ public:
 	afx_msg void OnClickedBtnCal();
 
 	
+	afx_msg void OnBnClickedBtnHelp();
 };

@@ -104,18 +104,26 @@
     <ClInclude Include="ConfirmDlg.h" />
     <ClInclude Include="DlgTest.h" />
     <ClInclude Include="DlgTestDlg.h" />
+    <ClInclude Include="FIRSTPAGE.h" />
+    <ClInclude Include="PageSheet.h" />
     <ClInclude Include="Resource.h" />
+    <ClInclude Include="SECONDPAGE.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
+    <ClInclude Include="THIRDPAGE.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ConfirmDlg.cpp" />
     <ClCompile Include="DlgTest.cpp" />
     <ClCompile Include="DlgTestDlg.cpp" />
+    <ClCompile Include="FIRSTPAGE.cpp" />
+    <ClCompile Include="PageSheet.cpp" />
+    <ClCompile Include="SECONDPAGE.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="THIRDPAGE.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="DlgTest.rc" />
