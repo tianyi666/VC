@@ -79,7 +79,7 @@ END_MESSAGE_MAP()
 
 
 // CDlgTestDlg 消息处理程序
-
+CEdit *pEdit;
 BOOL CDlgTestDlg::OnInitDialog()
 {
 	CDialogEx::OnInitDialog();
@@ -110,6 +110,13 @@ BOOL CDlgTestDlg::OnInitDialog()
 	SetIcon(m_hIcon, FALSE);		// 设置小图标
 
 	// TODO:  在此添加额外的初始化代码
+
+	pEdit = (CEdit *)GetDlgItem(IDC_EDIT_MULTI);
+	//pEdit->ModifyStyleEx(0, ES_NOHIDESEL); //无效 必须要在Create的时候设置风格
+	pEdit->SetWindowTextW(_T("你妹！"));
+
+	pEdit->UpdateWindow();
+
 
 	return TRUE;  // 除非将焦点设置到控件，否则返回 TRUE
 }
@@ -244,10 +251,12 @@ void CDlgTestDlg::OnBnClickedBtnSave()
 
 	//cs = new CStatic();
 	//cs->Create(_T("111"), WS_CHILD | WS_VISIBLE , CRect(20, 20, 50, 50), this);
-	cs.Create(_T("图片"), WS_CHILD | WS_VISIBLE | SS_BITMAP, CRect(90, 90, 50, 50), this);
-	HRESULT ret = img.Load(_T("D:/111.png"));
-	HBITMAP bitmap = img.Detach();
-	cs.SetBitmap(bitmap);
-
-	cs.ShowWindow(SW_SHOW);
+	//cs.Create(_T("图片"), WS_CHILD | WS_VISIBLE | SS_BITMAP, CRect(90, 90, 50, 50), this);
+	//HRESULT ret = img.Load(_T("D:/111.png"));
+	//HBITMAP bitmap = img.Detach();
+	//cs.SetBitmap(bitmap);
+	//cs.ShowWindow(SW_SHOW);
+	pEdit->SetSel(1, -1);
+	pEdit->ReplaceSel(_T("是一个小花猫！"));
+	pEdit->GetFocus();
 }
