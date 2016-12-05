@@ -73,6 +73,8 @@ BEGIN_MESSAGE_MAP(CDlgTestDlg, CDialogEx)
 	ON_BN_CLICKED(IDCANCEL, &CDlgTestDlg::OnBnClickedCancel)
 	ON_BN_CLICKED(IDC_BTN_CAL, &CDlgTestDlg::OnClickedBtnCal)
 	ON_BN_CLICKED(IDC_BTN_HELP, &CDlgTestDlg::OnBnClickedBtnHelp)
+	ON_BN_CLICKED(IDC_BTN_OPEN, &CDlgTestDlg::OnBnClickedBtnOpen)
+	ON_BN_CLICKED(IDC_BTN_SAVE, &CDlgTestDlg::OnBnClickedBtnSave)
 END_MESSAGE_MAP()
 
 
@@ -199,6 +201,7 @@ CDlgTestDlg::~CDlgTestDlg()
 	if (m_pDlg != NULL)
 	{
 		delete m_pDlg;
+		m_pDlg = NULL;
 	}
 }
 
@@ -211,4 +214,40 @@ void CDlgTestDlg::OnBnClickedBtnHelp()
 	CPageSheet pSheet(_T("帮助"));
 	////pSheet.SetWizardMode(); //向导模式才调用  OnSetActive() finish 等函数 也是
 	pSheet.DoModal();
+}
+
+
+void CDlgTestDlg::OnBnClickedBtnOpen()
+{
+	// TODO:  在此添加控件通知处理程序代码
+
+	CFileDialog fileDlg(true, _T(".txt"), NULL, 0, _T("文本文件|*.txt|所有文件|*.*"), this);
+	if (IDOK == fileDlg.DoModal())
+	{
+		SetDlgItemText(IDC_RESULT, fileDlg.GetFolderPath() + fileDlg.GetFileTitle());// 
+	}
+}
+
+  
+
+CImage img;
+
+CStatic* cs;
+void CDlgTestDlg::OnBnClickedBtnSave()
+{
+	//CFileDialog fileDlg(false, _T(".txt"), _T("ReadMe"), 0, _T("文本文件|*.txt|所有文件|*.*"), this);
+
+	//if (IDOK == fileDlg.DoModal())
+	//{
+	//	SetDlgItemText(IDC_RESULT, fileDlg.GetPathName() );// 
+	//}
+
+	cs = new CStatic();
+	//cs->Create(_T("111"), WS_CHILD | WS_VISIBLE , CRect(20, 20, 50, 50), this);
+	cs->Create(_T("图片"), WS_CHILD | WS_VISIBLE | SS_BITMAP, CRect(90, 90, 50, 50), this);
+	HRESULT ret = img.Load(_T("D:/111.png"));
+	HBITMAP bitmap = img.Detach();
+	cs->SetBitmap(bitmap);
+
+	cs->ShowWindow(SW_SHOW);
 }

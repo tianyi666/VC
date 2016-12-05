@@ -117,12 +117,21 @@ int _tmain(int argc, _TCHAR* argv[])
 	//cout << 123 << endl;
 	//system("PAUSE");
 
-	CString sHomeUrl(_T("tianyi666.top"));
-	CString sPageUrl(_T("index.php"));
-	CString sResult(_T(""));
+	//CString sHomeUrl(_T("tianyi666.top"));
+	//CString sPageUrl(_T("index.php"));
+	//CString sResult(_T(""));
 	setlocale(LC_ALL, "chs");
-	HttpRequestGet(sHomeUrl, sPageUrl, sResult);
-	wcout << sResult.GetString() << endl;
+	//HttpRequestGet(sHomeUrl, sPageUrl, sResult);
+	//wcout << sResult.GetString() << endl;
+
+	TCHAR msg[] = _T("你好地地道道的");
+	//TCHAR str[sizeof(msg) / sizeof(msg[0])]; //= {0};
+	TCHAR str[8]; //= {0};
+	/*wcout << sizeof(msg)/sizeof(msg[0]) << endl;*/
+	wcout << _countof(msg) << endl;
+	_tcsncpy_s(str, msg, 8);
+	
+	wcout << str << endl;
 	system("pause");
 	return 0;
 }
