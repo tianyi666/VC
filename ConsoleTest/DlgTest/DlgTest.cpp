@@ -5,6 +5,7 @@
 #include "stdafx.h"
 #include "DlgTest.h"
 #include "DlgTestDlg.h"
+#include "BtnDlg.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -70,7 +71,8 @@ BOOL CDlgTestApp::InitInstance()
 	// 例如修改为公司或组织名
 	SetRegistryKey(_T("应用程序向导生成的本地应用程序"));
 
-	CDlgTestDlg dlg;
+	//CDlgTestDlg dlg;
+	CBtnDlg dlg;
 	m_pMainWnd = &dlg;
 	INT_PTR nResponse = dlg.DoModal();
 	if (nResponse == IDOK)

@@ -101,6 +101,7 @@
     <Text Include="ReadMe.txt" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BtnDlg.h" />
     <ClInclude Include="ConfirmDlg.h" />
     <ClInclude Include="DlgTest.h" />
     <ClInclude Include="DlgTestDlg.h" />
@@ -113,6 +114,7 @@
     <ClInclude Include="THIRDPAGE.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="BtnDlg.cpp" />
     <ClCompile Include="ConfirmDlg.cpp" />
     <ClCompile Include="DlgTest.cpp" />
     <ClCompile Include="DlgTestDlg.cpp" />

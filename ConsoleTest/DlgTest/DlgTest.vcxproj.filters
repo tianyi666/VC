@@ -48,6 +48,9 @@
     <ClInclude Include="PageSheet.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="BtnDlg.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DlgTest.cpp">
@@ -72,6 +75,9 @@
       <Filter>源文件</Filter>
     </ClCompile>
     <ClCompile Include="PageSheet.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="BtnDlg.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
   </ItemGroup>
