@@ -14,7 +14,7 @@ IMPLEMENT_DYNAMIC(CBtnDlg, CDialogEx)
 CBtnDlg::CBtnDlg(CWnd* pParent /*=NULL*/)
 	: CDialogEx(CBtnDlg::IDD, pParent)
 {
-
+	
 }
 
 CBtnDlg::~CBtnDlg()
@@ -117,4 +117,20 @@ void CBtnDlg::OnBnClickedOk()
 
 	SetDlgItemText(IDC_EDIT_RESULT, res);
 	//CDialogEx::OnOK();
+}
+
+
+BOOL CBtnDlg::OnInitDialog()
+{
+	CDialogEx::OnInitDialog();
+
+	// TODO:  在此添加额外的初始化
+	CheckDlgButton(IDC_RADIO_PORTAL, 1);
+	OnBnClickedRadioPortal();
+
+	((CComboBox*)GetDlgItem(IDC_CMB1))->AddString(_T("aaa"));
+	((CComboBox*)GetDlgItem(IDC_CMB1))->SelectString(0,_T("a"));
+
+	return TRUE;  // return TRUE unless you set the focus to a control
+	// 异常:  OCX 属性页应返回 FALSE
 }

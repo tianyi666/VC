@@ -24,4 +24,5 @@ public:
 	afx_msg void OnBnClickedRadioForum();
 	afx_msg void OnBnClickedRadioBlog();
 	afx_msg void OnBnClickedOk();
+	virtual BOOL OnInitDialog();
 };
