@@ -129,8 +129,8 @@ int _tmain(int argc, _TCHAR* argv[])
 	TCHAR str[8]; //= {0};
 	/*wcout << sizeof(msg)/sizeof(msg[0]) << endl;*/
 	wcout << _countof(msg) << endl;
-	_tcsncpy_s(str, msg, 8);
-	
+	//_tcsncpy_s(str, msg, 5);
+	_tcscpy_s(str, 5, msg);
 	wcout << str << endl;
 	system("pause");
 	return 0;

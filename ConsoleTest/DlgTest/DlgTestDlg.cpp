@@ -232,7 +232,7 @@ void CDlgTestDlg::OnBnClickedBtnOpen()
 
 CImage img;
 
-CStatic* cs;
+CStatic cs;
 void CDlgTestDlg::OnBnClickedBtnSave()
 {
 	//CFileDialog fileDlg(false, _T(".txt"), _T("ReadMe"), 0, _T("文本文件|*.txt|所有文件|*.*"), this);
@@ -242,12 +242,12 @@ void CDlgTestDlg::OnBnClickedBtnSave()
 	//	SetDlgItemText(IDC_RESULT, fileDlg.GetPathName() );// 
 	//}
 
-	cs = new CStatic();
+	//cs = new CStatic();
 	//cs->Create(_T("111"), WS_CHILD | WS_VISIBLE , CRect(20, 20, 50, 50), this);
-	cs->Create(_T("图片"), WS_CHILD | WS_VISIBLE | SS_BITMAP, CRect(90, 90, 50, 50), this);
+	cs.Create(_T("图片"), WS_CHILD | WS_VISIBLE | SS_BITMAP, CRect(90, 90, 50, 50), this);
 	HRESULT ret = img.Load(_T("D:/111.png"));
 	HBITMAP bitmap = img.Detach();
-	cs->SetBitmap(bitmap);
+	cs.SetBitmap(bitmap);
 
-	cs->ShowWindow(SW_SHOW);
+	cs.ShowWindow(SW_SHOW);
 }
