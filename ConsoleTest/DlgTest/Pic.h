@@ -23,4 +23,5 @@ public:
 	virtual BOOL OnInitDialog();
 	CListCtrl m_colorlist;
 	afx_msg void OnClickList1(NMHDR *pNMHDR, LRESULT *pResult);
+	afx_msg void OnSetfocusList1(NMHDR *pNMHDR, LRESULT *pResult);
 };
