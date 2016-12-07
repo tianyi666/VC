@@ -51,6 +51,9 @@
     <ClInclude Include="BtnDlg.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="Pic.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="DlgTest.cpp">
@@ -80,6 +83,9 @@
     <ClCompile Include="BtnDlg.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="Pic.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="DlgTest.rc">
@@ -93,6 +99,9 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="res\DlgTest.ico">
+      <Filter>资源文件</Filter>
+    </Image>
+    <Image Include="..\..\..\111.bmp">
       <Filter>资源文件</Filter>
     </Image>
   </ItemGroup>
