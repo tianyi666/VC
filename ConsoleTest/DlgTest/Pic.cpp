@@ -45,6 +45,9 @@ BOOL CPic::OnInitDialog()
 	//HBITMAP bitmap = img1.Detach();
 	//((CStatic*)(GetDlgItem(IDC_PIC)))->SetBitmap(bitmap);
 	//delete img1;
+
+	////////////////////////////////////////////////////////////////////////
+
 	m_colorlist.SetExtendedStyle(m_colorlist.GetExtendedStyle() | LVS_EX_FULLROWSELECT | LVS_EX_GRIDLINES | LVS_EDITLABELS);//
 	m_colorlist.InsertColumn(0, _T("颜色"), LVCFMT_LEFT,50);
 	m_colorlist.InsertColumn(1, _T("RGB"), LVCFMT_LEFT,100);
@@ -69,15 +72,19 @@ void CPic::OnClickList1(NMHDR *pNMHDR, LRESULT *pResult)
 	*pResult = 0;
 
 	//获取 选中项的值 方法一
-	//if (((NMLISTVIEW*)pNMHDR)->iItem != -1)
-	//{
-	//	SetDlgItemText(IDC_STATIC_SEL, m_colorlist.GetItemText(((NMLISTVIEW*)pNMHDR)->iItem,1 ) );
-	//}
+	if (((NMLISTVIEW*)pNMHDR)->iItem != -1)
+	{
+		SetDlgItemText(IDC_STATIC_SEL, m_colorlist.GetItemText(((NMLISTVIEW*)pNMHDR)->iItem,1 ) );
+	}
 
 	//获取 选中项的值 方法二
-	/*POSITION pos = m_colorlist.GetFirstSelectedItemPosition();
-	SetDlgItemText(IDC_STATIC_SEL, m_colorlist.GetItemText(m_colorlist.GetNextSelectedItem(pos), 0));*/
+	//POSITION pos = m_colorlist.GetFirstSelectedItemPosition();
+	//SetDlgItemText(IDC_STATIC_SEL, m_colorlist.GetItemText(m_colorlist.GetNextSelectedItem(pos), 0));
+	
 
+	/*return;*/
+
+	/////////////////////////////////////////////////////////////////////////////
 
 	//编辑list
 	NM_LISTVIEW  *pEditCtrl = (NM_LISTVIEW *)pNMHDR;
@@ -99,7 +106,7 @@ void CPic::OnClickList1(NMHDR *pNMHDR, LRESULT *pResult)
 
 	if (m_Item == -1)
 	{
-		needSave == false;
+		needSave = false;
 		m_Edit.ShowWindow(SW_HIDE);
 		return;
 	}

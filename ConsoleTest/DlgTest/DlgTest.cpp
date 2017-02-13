@@ -8,6 +8,7 @@
 #include "BtnDlg.h"
 #include "Pic.h"
 
+
 #ifdef _DEBUG
 #define new DEBUG_NEW
 #endif
@@ -75,6 +76,7 @@ BOOL CDlgTestApp::InitInstance()
 	//CDlgTestDlg dlg;
 	//CBtnDlg dlg;
 	CPic dlg;
+
 	m_pMainWnd = &dlg;
 	INT_PTR nResponse = dlg.DoModal();
 	if (nResponse == IDOK)
