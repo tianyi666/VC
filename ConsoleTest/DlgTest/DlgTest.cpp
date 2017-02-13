@@ -7,6 +7,7 @@
 #include "DlgTestDlg.h"
 #include "BtnDlg.h"
 #include "Pic.h"
+#include "TreeV.h"
 
 
 #ifdef _DEBUG
@@ -75,7 +76,8 @@ BOOL CDlgTestApp::InitInstance()
 
 	//CDlgTestDlg dlg;
 	//CBtnDlg dlg;
-	CPic dlg;
+	//CPic dlg;
+	CTreeV dlg;
 
 	m_pMainWnd = &dlg;
 	INT_PTR nResponse = dlg.DoModal();
